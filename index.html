@@ -1,11 +1,28 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <style>
         body {
-            background: linear-gradient(to bottom, #FFE896, #C9772F);
+            background: linear-gradient(to right, #FFE896, #FFFFFF);
             margin: 0;
             padding: 0;
+        }
+
+        /* Анимация для текста */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
@@ -14,11 +31,14 @@
         Сегодня я съел сочный банан
     </h3>
     <hr>
-    <marquee>
-        <h2 style="font-size: 8vw; color: #FAA161; font-variant: small-caps; text-align: center; font-family: Arial;">
+
+    <!-- Используем div вместо <marquee> для лучшей совместимости -->
+    <div class="marquee">
+        <h2 style="font-size: 8vw; color: #FAA161; font-variant: small-caps; display: inline-block; font-family: Arial;">
             Я ненавижу бананы
         </h2>
-    </marquee>
+    </div>
+
     <hr>
     <h5 style="font-size: 6vw; color: #FFE896; font-variant: small-caps; text-align: center; font-family: Arial;">
         Я ненавижу бананы
